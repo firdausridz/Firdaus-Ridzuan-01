@@ -1,0 +1,113 @@
+<html>
+<title> Firdaus Ridzuan's Webpage</title>
+
+
+<body background="index.png">
+
+<meta charset="UTF-8">
+<body link="#C2DEDC" vlink="#ECE5C7" alink="#CDC2AE"> 
+
+
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1280px">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        function snow() {
+            //1, define a snowflake template
+            var flake = $("<div>").css({
+                "position": "absolute",
+                "color": "#1D5B79"
+            }).html("｡･:*˚:✧｡");
+ 
+            //Get the width of the page, use this number to calculate, the value of left when the snowflake starts
+            var documentWidth = $(document).width();
+ 
+            //Get the height of the page, which is equivalent to the position of the Y axis when the snowflakes fall
+            var documentHieght = $(document).height();
+ 
+            //Define the number of milliseconds to generate a snowflake
+            var millisec = 100;
+            //2, set the first timer, a periodic timer, and generate a snowflake every time (millisec);
+            setInterval(function() {
+                //Randomly generate the value of left at the beginning of the snowflake falling, which is equivalent to the position of the X axis at the beginning
+                var startLeft = Math.random() * documentWidth;
+ 
+                //Randomly generate the value of left at the end of snowflake falling, which is equivalent to the position of the X axis at the end
+                var endLeft = Math.random() * documentWidth;
+ 
+                // Randomly generate snowflake size
+                var flakeSize = 5 + 20 * Math.random();
+ 
+                //Randomly generate the falling duration of snowflakes
+                var durationTime = 4000 + 7000 * Math.random();
+ 
+                //Randomly generate the transparency at the beginning of falling snowflakes
+                var startOpacity = 0.7 + 0.3 * Math.random();
+ 
+                //Randomly generate the transparency at the end of falling snowflakes
+                var endOpacity = 0.2 + 0.2 * Math.random();
+ 
+                //3. Clone a snowflake template, define the initial style of the snowflake, and stitch it into the page
+                flake.clone().appendTo($("body")).css({
+                    "left": startLeft,
+                    "opacity": startOpacity,
+                    "font-size": flakeSize,
+                    "top": "-25px",
+                }).animate({ //Execute animation
+                    "left": endLeft,
+                    "opacity": endOpacity,
+                    "top": documentHieght
+                }, durationTime, function() {
+                    //4. When the snowflake falls, delete the snowflake.
+                    $(this).remove(); 
+                });
+            }, millisec);
+        };
+        snow();
+    </script>
+<marquee width="100%" direction="right" height="100px">
+ <h1 style="font-family:Geneva; color:#1D5B79; font-size:36px;">Welcome Nakamas to my Webpage!</h1>
+</marquee>
+
+<p align="center">
+<a href="index.html"><img src="button_home.png" height="50" width="150"> </a>
+<a href="biodata.html"><img src="button_biodata.png" height="50" width="150"></a>
+<a href="family.html"><img src="button_family.png" height="50" width="150"></a>
+<a href="education.html"><img src="button_education.png" height="50" width="150"></a>
+<a href="experience.html"><img src="button_experience.png" height="50" width="150"> </a>
+<a href="skills.html"><img src="button_skills.png" height="50" width="150"> </a>
+<a href="references.html"><img src="button_references.png" height="50" width="150"></a>
+
+<audio controls autoplay>
+  <source src="home.mp3" type="audio/mpeg">
+</audio>
+
+<p align="center">
+
+
+<marquee width="100%" direction="left" height="100px">
+ <h2 style="font-family:Helvetica; color:#1D5B79; font-size: 24px;">by Firdaus Ridzuan</h2>
+</marquee>
+</p>
+
+
+
+
+
+<!-- Footer -->
+<br><br><br><br><br><br>
+<font color ="#1D5B79">
+  <footer class="w3-container w3-padding-32 w3-light-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>Thank You</h3>
+      <p>for spending your time wisiting my Website. </p>
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Copyright by Firdaus Ridzuan @ 2023</div>
+
+<!-- End page content -->
+</div>
+</body>
+</html>
